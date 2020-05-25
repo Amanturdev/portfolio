@@ -1,3 +1,13 @@
+document.body.onload = function () {
+    setTimeout(function() {
+        var preloader = document.getElementById('preloader');
+        if (!preloader.classList.contains('done')){
+            preloader.classList.add('done');
+        }
+    }, 1000);
+
+
+};
 
 let open = document.querySelector('.navbar--icon');
 let menu = document.querySelector('.nav--open');
@@ -35,13 +45,12 @@ link.click(function() {
     menu2.addClass('close');
 });
 
-const swup = new Swup({
-    plugins: [new SwupOverlayTheme({
-        color: '#000000',
-        duration: 600,
-        direction: 'to-right',
-    })]
-});
+ $(".link").click(function(){
+        var _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+ });
+
+
 
 
 
